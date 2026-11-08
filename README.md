@@ -15,6 +15,8 @@ npm run dev
 npm run build
 ```
 
+Build artifacts are generated in `docs/` for GitHub Pages publishing.
+
 ## Deployment
 
 On push to `main`, GitHub Actions builds and deploys to GitHub Pages:
