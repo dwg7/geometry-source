@@ -2,6 +2,14 @@ import './style.css';
 import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
+if (typeof window !== 'undefined') {
+  window.maplibregl ??= maplibregl;
+}
+Object.defineProperty(maplibregl, 'workerUrl', {
+  value: '/geometry-source/assets/maplibre-gl-worker.mjs',
+  writable: true,
+});
+
 document.querySelector('#app').innerHTML = `
   <div id="map"></div>
   <aside id="legend" aria-label="Building source legend and filters">
