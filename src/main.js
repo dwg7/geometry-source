@@ -44,9 +44,9 @@ document.querySelector('#app').innerHTML = `
 `;
 
 const sourceGroups = {
-  microsoft: ['microsoft/ml-buildings', 'microsoft'],
-  google: ['google/open-buildings', 'google'],
-  other: ['esri', 'meta', 'openstreetmap', 'osm', 'other'],
+  microsoft: ['microsoft ml buildings', 'microsoft/ml-buildings', 'microsoft'],
+  google: ['google open buildings', 'google/open-buildings', 'google'],
+  other: ['esri community maps', 'esri', 'meta', 'openstreetmap', 'osm', 'other'],
   unknown: [],
 };
 
