@@ -2,7 +2,8 @@ import './style.css';
 import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-maplibregl.setWorkerUrl('/geometry-source/assets/maplibre-gl-worker.mjs');
+const workerUrl = new URL('maplibre-gl-worker.mjs', import.meta.url).href;
+maplibregl.setWorkerUrl(workerUrl);
 
 document.querySelector('#app').innerHTML = `
   <div id="map"></div>
