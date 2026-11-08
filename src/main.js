@@ -61,6 +61,7 @@ const map = new maplibregl.Map({
   center: [102.6162, 17.9623],
   zoom: 16,
   pitch: 0,
+  hash: 'map',
 });
 
 map.addControl(new maplibregl.NavigationControl(), 'top-left');
