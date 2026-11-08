@@ -57,7 +57,7 @@ const layerIds = {
 
 const map = new maplibregl.Map({
   container: 'map',
-  style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+  style: 'https://stars.optgeo.org/style/positron',
   center: [102.6162, 17.9623],
   zoom: 16,
   pitch: 0,
@@ -76,16 +76,14 @@ for (const values of Object.values(sourceGroups)) {
 map.on('load', () => {
   map.addSource('overture-buildings', {
     type: 'vector',
-    tiles: ['https://stars.optgeo.org/overture_buildings/{z}/{x}/{y}.pbf'],
-    minzoom: 14,
-    maxzoom: 16,
+    url: 'https://stars.optgeo.org/overture_buildings',
   });
 
   map.addLayer({
     id: layerIds.fill,
     type: 'fill',
     source: 'overture-buildings',
-    'source-layer': '#building',
+    'source-layer': 'building',
     paint: {
       'fill-color': [
         'match',
@@ -105,7 +103,7 @@ map.on('load', () => {
     id: layerIds.outline,
     type: 'line',
     source: 'overture-buildings',
-    'source-layer': '#building',
+    'source-layer': 'building',
     paint: {
       'line-color': '#ffffff',
       'line-width': 0.5,
